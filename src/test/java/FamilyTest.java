@@ -29,10 +29,10 @@ class FamilyTest {
         family.setPets(new HashSet<>(Collections.singletonList(dog)));
         family.addChild(child);
 
-        Assertions.assertEquals("Family{mother=Human{name='Arzu', surname='Ismayilova', birth date='21/04/1975', iq=0, schedule=There's no schedule}," +
-                " father=Human{name='Senan', surname='Ismayilov', birth date='12/12/1975', iq=0, schedule=There's no schedule}," +
+        Assertions.assertEquals("Family{mother=Human{name='Arzu', surname='Ismayilova', birth date='21/04/1975', iq=0, schedule=null}," +
+                " father=Human{name='Senan', surname='Ismayilov', birth date='12/12/1975', iq=0, schedule=null}," +
                 " pet=[DOG{nickname='Danny', age=6, trickLevel=55, habits=[eat, run, bite], canFly=false, numberOfLegs=4, hasFur=true}]," +
-                " children=[Human{name='Elnur', surname='Ismayilov', birth date='12/02/2000', iq=94, schedule=There's no schedule}]}", family.toString());
+                " children=[Human{name='Elnur', surname='Ismayilov', birth date='12/02/2000', iq=94, schedule=null}]}", family.toString());
     }
 
     @Test

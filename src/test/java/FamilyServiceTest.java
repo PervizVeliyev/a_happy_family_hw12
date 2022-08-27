@@ -31,31 +31,31 @@ class FamilyServiceTest {
     void getFamiliesBiggerThan() {
         familyService.createNewFamily(mother1, father1);
         familyService.createNewFamily(mother2, father2);
-        familyService.getFamilyById(0).addChild(child1);
-        familyService.getFamilyById(0).addChild(child2);
-        familyService.getFamilyById(1).addChild(child3);
+        familyService.getFamilyById(1).addChild(child1);
+        familyService.getFamilyById(1).addChild(child2);
+        familyService.getFamilyById(2).addChild(child3);
 
-        Assertions.assertEquals(new ArrayList<>(Arrays.asList(familyService.getFamilyById(0))),familyService.getFamiliesBiggerThan(3));
+        Assertions.assertEquals(new ArrayList<>(Arrays.asList(familyService.getFamilyById(1))),familyService.getFamiliesBiggerThan(3));
     }
 
     @Test
     void getFamiliesLessThan() {
         familyService.createNewFamily(mother1, father1);
         familyService.createNewFamily(mother2, father2);
-        familyService.getFamilyById(0).addChild(child1);
-        familyService.getFamilyById(0).addChild(child2);
-        familyService.getFamilyById(1).addChild(child3);
+        familyService.getFamilyById(1).addChild(child1);
+        familyService.getFamilyById(1).addChild(child2);
+        familyService.getFamilyById(2).addChild(child3);
 
-        Assertions.assertEquals(new ArrayList<>(Arrays.asList(familyService.getFamilyById(1))),familyService.getFamiliesLessThan(4));
+        Assertions.assertEquals(new ArrayList<>(Arrays.asList(familyService.getFamilyById(2))),familyService.getFamiliesLessThan(4));
     }
 
     @Test
     void countFamiliesWithMemberNumber(){
         familyService.createNewFamily(mother1, father1);
         familyService.createNewFamily(mother2, father2);
-        familyService.getFamilyById(0).addChild(child1);
-        familyService.getFamilyById(0).addChild(child2);
-        familyService.getFamilyById(1).addChild(child3);
+        familyService.getFamilyById(1).addChild(child1);
+        familyService.getFamilyById(1).addChild(child2);
+        familyService.getFamilyById(2).addChild(child3);
 
         Assertions.assertEquals(1, familyService.countFamiliesWithMemberNumber(3));
     }
@@ -65,7 +65,7 @@ class FamilyServiceTest {
     void createNewFamily() {
         familyService.createNewFamily(mother1, father1);
 
-        Assertions.assertEquals(new Family(mother1, father1), familyService.getFamilyById(0));
+        Assertions.assertEquals(new Family(mother1, father1), familyService.getFamilyById(1));
     }
 
     @Test
@@ -73,7 +73,7 @@ class FamilyServiceTest {
         familyService.createNewFamily(mother1, father1);
         familyService.createNewFamily(mother2, father2);
 
-        Assertions.assertTrue(familyService.deleteFamilyByIndex(1));
+        Assertions.assertTrue(familyService.deleteFamilyByIndex(2));
     }
 
     @Test
@@ -81,34 +81,34 @@ class FamilyServiceTest {
         familyService.createNewFamily(mother1, father1);
         familyService.createNewFamily(mother2, father2);
 
-        Assertions.assertFalse(familyService.deleteFamilyByIndex(2));
+        Assertions.assertFalse(familyService.deleteFamilyByIndex(3));
     }
 
     @Test
     void bornChild() {
         familyService.createNewFamily(mother1, father1);
-        Family family = familyService.bornChild(familyService.getFamilyById(0), "Eldar", "Sebine");
+        Family family = familyService.bornChild(familyService.getFamilyById(1), "Eldar", "Sebine");
 
-        Assertions.assertEquals(family, familyService.getFamilyById(0));
+        Assertions.assertEquals(family, familyService.getFamilyById(1));
     }
 
     @Test
     void adoptChild() {
         familyService.createNewFamily(mother1, father1);
-        Family family = familyService.adoptChild(familyService.getFamilyById(0), child1);
+        Family family = familyService.adoptChild(familyService.getFamilyById(1), child1);
 
-        Assertions.assertEquals(family, familyService.getFamilyById(0));
+        Assertions.assertEquals(family, familyService.getFamilyById(1));
     }
 
     @Test
     void deleteAllChildrenOlderThan() {
         familyService.createNewFamily(mother1, father1);
-        familyService.getFamilyById(0).addChild(child1);
-        familyService.getFamilyById(0).addChild(child2);
-        familyService.getFamilyById(0).addChild(child3);
+        familyService.getFamilyById(1).addChild(child1);
+        familyService.getFamilyById(1).addChild(child2);
+        familyService.getFamilyById(1).addChild(child3);
         familyService.deleteAllChildrenOlderThan(13);
 
-        Assertions.assertEquals(3, familyService.getFamilyById(0).countFamily());
+        Assertions.assertEquals(3, familyService.getFamilyById(1).countFamily());
     }
 
     @Test
@@ -124,24 +124,24 @@ class FamilyServiceTest {
         familyService.createNewFamily(mother1, father1);
         familyService.createNewFamily(mother2, father2);
 
-        Assertions.assertEquals(new Family(mother2, father2), familyService.getFamilyById(1));
+        Assertions.assertEquals(new Family(mother2, father2), familyService.getFamilyById(2));
     }
 
     @Test
     void getPets() {
         familyService.createNewFamily(mother1, father1);
-        familyService.getFamilyById(0).setPets(new HashSet<>(Arrays.asList(dog, cat)));
+        familyService.getFamilyById(1).setPets(new HashSet<>(Arrays.asList(dog, cat)));
 
-        Assertions.assertEquals(new HashSet<>(Arrays.asList(dog, cat)), familyService.getPets(0));
+        Assertions.assertEquals(new HashSet<>(Arrays.asList(dog, cat)), familyService.getPets(1));
     }
 
     @Test
     void addPet() {
         familyService.createNewFamily(mother1, father1);
-        familyService.getFamilyById(0).setPets(new HashSet<>(Arrays.asList(dog)));
-        familyService.addPet(cat, 0);
+        familyService.getFamilyById(1).setPets(new HashSet<>(Arrays.asList(dog)));
+        familyService.addPet(cat, 1);
 
-        Assertions.assertEquals(new HashSet<>(Arrays.asList(dog, cat)), familyService.getPets(0));
+        Assertions.assertEquals(new HashSet<>(Arrays.asList(dog, cat)), familyService.getPets(1));
     }
 
 }
