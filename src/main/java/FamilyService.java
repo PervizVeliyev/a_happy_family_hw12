@@ -70,7 +70,7 @@ public class FamilyService {
                 .forEach(family -> family.getChildren()
                         .forEach(child -> { if((now().getYear() - Instant.ofEpochMilli(child.getBirthDate())
                                 .atZone(ZoneId.systemDefault()).
-                                toLocalDate().plusDays(1).getYear()) > age){
+                                toLocalDate().getYear()) > age){
                             family.deleteChild(child);
                             familyDao.saveFamily(family);}}));
     }

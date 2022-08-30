@@ -105,7 +105,7 @@ public class Human {
 
     @Override
     public String toString() {
-        LocalDate ld = Instant.ofEpochMilli(birthDate).atZone(ZoneId.systemDefault()).toLocalDate().plusDays(1);
+        LocalDate ld = Instant.ofEpochMilli(birthDate).atZone(ZoneId.systemDefault()).toLocalDate();
         String formattedDate = ld.format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));
         return "Human{" +
                 "name='" + name + '\'' +
@@ -173,14 +173,14 @@ public class Human {
     }
 
     public String describeAge(){
-        LocalDate dateStart = Instant.ofEpochMilli(birthDate).atZone(ZoneId.systemDefault()).toLocalDate().plusDays(1);
+        LocalDate dateStart = Instant.ofEpochMilli(birthDate).atZone(ZoneId.systemDefault()).toLocalDate();
         LocalDate dateEnd = LocalDate.now();
         return String.format("%d years, %d months, %d days", Period.between(dateStart, dateEnd).getYears(),
                 Period.between(dateStart, dateEnd).getMonths(), Period.between(dateStart, dateEnd).getDays());
     }
 
     public String prettyFormat(){
-        LocalDate ld = Instant.ofEpochMilli(birthDate).atZone(ZoneId.systemDefault()).toLocalDate().plusDays(1);
+        LocalDate ld = Instant.ofEpochMilli(birthDate).atZone(ZoneId.systemDefault()).toLocalDate();
         String formattedDate = ld.format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));
         return "{name='" + name + '\'' +
             ", surname='" + surname + '\'' +
