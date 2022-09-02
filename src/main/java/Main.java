@@ -91,7 +91,7 @@ public class Main {
                         String birthDay2 = scanner.next();
                         System.out.print("Please, enter the iq of father: ");
                         int iq2 = scanner.nextInt();
-                        Human father = new Woman(name2, surname2, String.format("%s/%s/%s", birthDay2, birthMonth2, birthYear2), iq2);
+                        Human father = new Man(name2, surname2, String.format("%s/%s/%s", birthDay2, birthMonth2, birthYear2), iq2);
                         familyController.createNewFamily(father, mother);
                     }
                     case 7 -> {

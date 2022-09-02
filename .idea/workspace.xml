@@ -6,8 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="7a390e28-051e-4b19-b96f-93cfa66bf0cb" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/FamilyService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/FamilyService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Human.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Human.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -104,9 +103,9 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Unnamed" />
-        <item itemvalue="JUnit.FamilyServiceTest" />
-        <item itemvalue="JUnit.FamilyTest" />
         <item itemvalue="JUnit.HumanEqualsHashCodeTest" />
+        <item itemvalue="JUnit.FamilyTest" />
+        <item itemvalue="JUnit.FamilyServiceTest" />
         <item itemvalue="JUnit.FamilyTest.testToString" />
       </list>
     </recent_temporary>
@@ -137,7 +136,9 @@
       <workItem from="1661595753821" duration="8767000" />
       <workItem from="1661622958988" duration="6003000" />
       <workItem from="1661630343254" duration="12000" />
-      <workItem from="1661841119184" duration="847000" />
+      <workItem from="1661841119184" duration="1014000" />
+      <workItem from="1661849770947" duration="890000" />
+      <workItem from="1662037813360" duration="184000" />
     </task>
     <servers />
   </component>
